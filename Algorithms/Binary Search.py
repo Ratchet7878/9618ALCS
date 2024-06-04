@@ -29,3 +29,13 @@ def IterativeBinarySearch(Array, DataToFind):
     return found
 
 #recursive solution
+def BinarySearch(IntegerArray, LowerBound, UpperBound, ToFind):
+    if LowerBound > UpperBound:
+        return -1
+    mid = (LowerBound + UpperBound) // 2
+    if IntegerArray[mid] == ToFind:
+        return mid
+    elif IntegerArray[mid] > ToFind:
+        return BinarySearch(IntegerArray, LowerBound, mid - 1, ToFind)
+    else:
+        return BinarySearch(IntegerArray, mid + 1, UpperBound, ToFind)
