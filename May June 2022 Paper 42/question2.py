@@ -29,23 +29,21 @@ print("After:")
 OutputArray()
 
 def BinarySearch(SearchArray, Lower, Upper, SearchValue):
-    if Upper >= Lower:
+    if Lower > Upper:
         return -1
+    Mid = (Lower + Upper) // 2    
+    if SearchArray[0][Mid] == SearchValue:
+        return Mid
+    elif SearchArray[0][Mid] > SearchValue:
+        return BinarySearch(SearchArray, Lower, Mid - 1, SearchValue)
     else:
-        Mid = (Lower + (Upper - 1)) // 2 #// is used as DIV
-        if SearchArray[0][Mid] == SearchValue:
-            return Mid
-        else:
-            if SearchArray[0][Mid] > SearchValue:
-                return BinarySearch(SearchArray, Lower, Mid - 1, SearchValue)
-            else:
-                return BinarySearch(SearchArray, Mid + 1, Upper, SearchValue)
+        return BinarySearch(SearchArray, Mid + 1, Upper, SearchValue)
 
 
 firstcheck = int(input("Enter the fist num: "))
 secondcheck = int(input("Enter the second num: "))
 x = BinarySearch(ArrayData, 0, 9, firstcheck)
-y = BinarySearch(ArrayData, 0, 9, firstcheck)
+y = BinarySearch(ArrayData, 0, 9, secondcheck)
 print(x)
 print(y)
 
