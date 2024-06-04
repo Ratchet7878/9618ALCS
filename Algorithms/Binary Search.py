@@ -28,7 +28,7 @@ def IterativeBinarySearch(Array, DataToFind):
 
     return found
 
-#recursive solution
+#recursive solution (returns the index the value was found at)
 def BinarySearch(IntegerArray, LowerBound, UpperBound, ToFind):
     if LowerBound > UpperBound:
         return -1
