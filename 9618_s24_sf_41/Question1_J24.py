@@ -1,5 +1,5 @@
 # DECLARE ARRAY:DataStored [1:20] OF INTEGER
-DataStored = [0 for x in range(20)]
+DataStored = []
 NumberItems = 0
 
 def Initialise():
@@ -10,7 +10,7 @@ def Initialise():
             break
     for x in range(userNum):
         userInput = int(input("Enter the number to store: "))
-        DataStored[x] = userInput
+        DataStored.append(userInput)
         NumberItems += 1
 
 Initialise()
@@ -32,3 +32,34 @@ def BubbleSort():
 
 BubbleSort()
 print("Sorted Array: ", DataStored)
+
+def BinarySearch(DataToFInd):
+   
+    global DataStored, NumberItems
+    Upper = NumberItems
+    Lower = 0
+    found = False
+    isnotpresent = False
+
+    while not found and not isnotpresent:
+        Mid = (Lower + Upper) // 2
+        if DataStored[Mid] == DataToFind:
+            found = True
+        elif DataStored[Mid] < DataToFind:
+            Lower = Mid + 1
+        else:
+            Upper = Mid - 1
+        if Lower > Upper:
+            isnotpresent = True
+    print(Mid)
+    if isnotpresent:
+        return -1 
+    else:
+        return Mid
+
+dataToFInd = int(input("Enter the data to find: "))
+i = BinarySearch(dataToFInd)
+if i == -1:
+    print("Not found")
+else:
+    print(dataToFInd, " was found at index ", i)
