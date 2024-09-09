@@ -1,0 +1,9 @@
+Beech,30,400,200,No
+Hazel,40,300,200,No
+Oak,5,900,600,No
+Holly,30,600,300,Yes
+Walnut,30,2500,1000,No
+Magnolia Grandiflora,50,500,300,Yes
+Photinia,30,400,400,Yes
+Blue Conifer,40,250,50,Yes
+Green Conifer,40,300,150,Yes
