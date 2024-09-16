@@ -26,7 +26,7 @@ def Play():
             print("This is not an answer")
             userAnswer = input('Enter your answer or enter "no" to stop: ')
     precentage_Correct = int((got_Correct/NumberWords) * 100)
-    print("The percentage of correct answers is: ", precentage_Correct)
+    print("The percentage of correct answers is: ", precentage_Correct, "%")
     for x in range(length_array):
         if WordArray[x] != "":
             print(WordArray[x])
